@@ -13,18 +13,6 @@ if ('serviceWorker' in navigator) {
   });
 } 
 
-// PWAインストールプロンプト用グローバル変数
-let deferredPrompt;
-
-// beforeinstallpromptイベントをキャプチャ
-window.addEventListener('beforeinstallprompt', (e) => {
-    // デフォルト動作をキャンセルして任意のタイミングで呼び出し可能にする
-    e.preventDefault();
-    deferredPrompt = e;
-    // 必要に応じて、ここで「アプリに追加」ボタンを表示する
-    console.log('インストールプロンプトが利用可能です');
-});
-
 videoElement.addEventListener('click', () => {
     if (videoElement.requestFullscreen) {
       videoElement.requestFullscreen();
