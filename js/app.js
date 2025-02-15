@@ -3,7 +3,7 @@ const videoSelect = document.getElementById('videoSelect');
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('service-worker.js')
+    navigator.serviceWorker.register('./js/service-worker.js')
       .then((registration) => {
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
       })
@@ -25,23 +25,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
     console.log('インストールプロンプトが利用可能です');
 });
 
-/*
-navigator.mediaDevices.getUserMedia({
-  video: {
-    width: { ideal: 1920 },
-    height: { ideal: 1080 }
-  },
-  audio: false
-})
-.then(stream => {
-  videoElement.srcObject = stream;
-  videoElement.play();
-})
-.catch(error => {
-  console.error('ビデオストリームの取得に失敗しました:', error);
-});
-
-*/
 videoElement.addEventListener('click', () => {
     if (videoElement.requestFullscreen) {
       videoElement.requestFullscreen();

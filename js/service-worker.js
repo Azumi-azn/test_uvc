@@ -1,10 +1,10 @@
 const CACHE_NAME = 'test-uvc-cache-v1';
 const urlsToCache = [
-  'index.html',
-  'app.js',
-  'manifest.json',
-  'favicon_192x192.png',
-  'favicon_512x512.png',
+  '../index.html',
+  './app.js',
+  '../manifest.json',
+  '../favicon_192x192.png',
+  '../favicon_512x512.png',
 ];
 
 self.addEventListener('install', (event) => {
